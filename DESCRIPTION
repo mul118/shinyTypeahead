@@ -1,0 +1,19 @@
+Package: shinyTypeahead
+Type: Package
+Title: Shiny Bindings for Typeahead.js
+Version: 0.1
+Date: 2015-02-21
+Author: Misha Lisovich
+Maintainer:  <mikhail.lisovich@gmail.com>
+Description: Shiny bindings for the Twitter Typeahead library
+License: MIT
+LazyData: TRUE
+Depends:
+    R (>= 3.1)
+Imports:
+    assertthat,
+    shiny,
+    htmltools,
+    jsonlite
+Suggests:
+    testhat

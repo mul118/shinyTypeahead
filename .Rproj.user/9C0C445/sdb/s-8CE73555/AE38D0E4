@@ -1,0 +1,17 @@
+{
+    "contents" : "#' HB Theme function\n#'\n#' Includes CSS files applying HB themes to navbar, data tables, and fonts\n#' @export\n#'\nhbshinytheme <- function(){\n\n  hbshinythemes_path <- function() system.file(\"www\", package = \"hbshinyutils\")\n\n  deps <-\n    htmltools::htmlDependency(\n      name = \"hbshinyutils\",\n      version = as.character(packageVersion(\"hbshinyutils\")),\n      src = hbshinythemes_path(),\n      stylesheet = c('css/general.css', 'css/navigation.css', 'css/data-tables.css')\n    )\n\n  htmltools::attachDependencies(\"\", deps)\n\n}\n",
+    "created" : 1424538072713.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "538512436",
+    "id" : "AE38D0E4",
+    "lastKnownWriteTime" : 1423777782,
+    "path" : "~/Documents/github/hb_shiny_dashboards/hbshinyutils/R/hbshinytheme.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

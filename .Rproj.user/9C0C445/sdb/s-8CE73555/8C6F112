@@ -1,0 +1,17 @@
+{
+    "contents" : "Package: shinyTypeahead\nType: Package\nTitle: Shiny Bindings for Typeahead.js\nVersion: 0.1\nDate: 2015-02-21\nAuthor: Misha Lisovich\nMaintainer:  <mikhail.lisovich@gmail.com>\nDescription: Shiny bindings for the Twitter Typeahead library\nLicense: MIT\nLazyData: TRUE\nDepends:\n    R (>= 3.1)\nImports:\n    assertthat,\n    shiny,\n    htmltools,\n    jsonlite\nSuggests:\n    testhat\n",
+    "created" : 1424538341366.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2851599634",
+    "id" : "8C6F112",
+    "lastKnownWriteTime" : 1424541910,
+    "path" : "~/Documents/github/shinyTypeahead/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "type" : "dcf"
+}

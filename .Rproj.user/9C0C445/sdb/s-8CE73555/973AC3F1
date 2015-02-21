@@ -1,0 +1,18 @@
+{
+    "contents" : "library(\"shiny\")\nlibrary(\"shinyTypeahead\")\n\n\nshinyApp(\n  ui = fluidPage(\n    flowLayout(\n      typeaheadInput(\"sel_car\", \"Enter a car\", row.names(mtcars)),\n      div(strong(\"Your input:\"), textOutput(\"test_output\"))\n    )\n  ),\n  server = function(input, output){\n    output$test_output <- renderText(input$sel_car)\n    }\n)\n",
+    "created" : 1424538965531.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "963382488",
+    "id" : "973AC3F1",
+    "lastKnownWriteTime" : 1424542075,
+    "path" : "~/Documents/github/shinyTypeahead/inst/examples/basic.R",
+    "project_path" : "inst/examples/basic.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

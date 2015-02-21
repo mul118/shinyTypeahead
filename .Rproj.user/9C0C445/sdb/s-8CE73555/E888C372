@@ -1,0 +1,18 @@
+{
+    "contents" : "#' Typeahead input\n#' @export\ntypeaheadInput <- function (inputId, label, choices, value = NULL, options = NULL){\n\n  #For testing: inputId = \"states\"; label = \"States\"; choices = \"\"; value = NULL; options = NULL\n\n  typeahead_path <- function() system.file(\"www\", package = \"shinyTypeahead\")\n\n  deps <-\n    htmltools::htmlDependency(\n      name = \"shinyTypeahead\",\n      version = as.character(packageVersion(\"shinyTypeahead\")),\n      src = typeahead_path(),\n      stylesheet = c(\"typeahead.js/typeahead.js-bootstrap3.less\"),\n      script = c(\"typeahead.js/dist/typeahead.bundle.min.js\")\n    )\n\n  typeahead_tag <- div(class = \"form-group shiny-input-container\", label %AND%\n        tags$label(label, `for` = inputId), tags$div(tags$input(id = inputId,\n        type = \"text\", class = \"typeahead form-control\", value = value)))\n\n  #Attach dependencies\n  htmltools::htmlDependencies(typeahead_tag) <- deps\n\n  init_script <- tags$script(paste0(\n    \"var choices = \", jsonlite::toJSON(as.character(choices)) ,\"\n\n    var states = new Bloodhound({\n      datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),\n      queryTokenizer: Bloodhound.tokenizers.whitespace,\n      local: $.map(choices, function(choice) { return { value: choice }; })\n    });\n\n    // kicks off the loading/processing of `local` and `prefetch`\n    states.initialize();\n\n    $('#\",inputId,\"').typeahead({\n      hint: true,\n      highlight: true,\n      minLength: 1\n    },\n    {\n      name: 'states',\n      displayKey: 'value',\n      source: states.ttAdapter()\n    });\"\n    ))\n\n  # return list\n  list(typeahead_tag, init_script)\n\n}\n\n# AND function\n\"%AND%\" <- function (x, y)\n{\n  if (!is.null(x) && !is.na(x))\n    if (!is.null(y) && !is.na(y))\n      return(y)\n  return(NULL)\n}\n\n",
+    "created" : 1424537426358.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "923468782",
+    "id" : "E888C372",
+    "lastKnownWriteTime" : 1424542566,
+    "path" : "~/Documents/github/shinyTypeahead/R/typeahead.R",
+    "project_path" : "R/typeahead.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
