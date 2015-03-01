@@ -11,7 +11,7 @@ typeaheadInput <- function (inputId, label, choices, value = NULL, options = NUL
       name = "shinyTypeahead",
       version = as.character(packageVersion("shinyTypeahead")),
       src = typeahead_path(),
-      stylesheet = c("typeahead.js/typeahead.js-bootstrap3.less"),
+      stylesheet = c("typeahead.js/typeaheadjs.css"),
       script = c("typeahead.js/dist/typeahead.bundle.min.js")
     )
 
